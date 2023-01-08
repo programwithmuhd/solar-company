@@ -1,0 +1,32 @@
+Getting started
+Pull-in a latest version with NPM ...
+
+npm install @glidejs/glide
+... provide <link> to the required core stylesheet. You can also optionally add an included theme stylesheet ...
+
+<!-- Required Core stylesheet -->
+<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+
+<!-- Optional Theme stylesheet -->
+<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+... then, prepare a little bit of necessary markup ...
+
+<div class="glide">
+  <div data-glide-el="track" class="glide__track">
+    <ul class="glide__slides">
+      <li class="glide__slide"></li>
+      <li class="glide__slide"></li>
+      <li class="glide__slide"></li>
+    </ul>
+  </div>
+</div>
+... and finally, initialize and mount a Glide.
+
+import Glide from '@glidejs/glide'
+
+new Glide('.glide').mount()
+Need a few selected modules? Import and mount only what you need.
+
+import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm'
+
+new Glide('.glide').mount({ Controls, Breakpoints })

@@ -1,0 +1,41 @@
+Getting started
+Include the Flickity .css and .js files in your site.
+
+<link rel="stylesheet" href="/path/to/flickity.css" media="screen">
+<script src="/path/to/flickity.pkgd.min.js"></script>
+Flickity works on a container carousel element with a group of cell elements.
+
+<div class="main-carousel">
+  <div class="carousel-cell">...</div>
+  <div class="carousel-cell">...</div>
+  <div class="carousel-cell">...</div>
+  ...
+</div>
+
+Initialize with jQuery
+You can use Flickity as a jQuery plugin: $('selector').flickity().
+
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});
+Initialize with vanilla JavaScript
+You can use Flickity with vanilla JS: new Flickity( elem ). The Flickity() constructor accepts two arguments: the carousel element and an options object.
+
+var elem = document.querySelector('.main-carousel');
+var flkty = new Flickity( elem, {
+  // options
+  cellAlign: 'left',
+  contain: true
+});
+
+// element argument can be a selector string
+//   for an individual element
+var flkty = new Flickity( '.main-carousel', {
+  // options
+});
+Initialize with HTML
+You can initialize Flickity in HTML, without writing any JavaScript. Add data-flickity attribute to the carousel element. Options can be set in its value.
+
+<div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
