@@ -2,33 +2,6 @@
 
 @section('content')
 <div class="w-full mx-auto">
-    <div class="w-full mx-auto py-3 bg-gray-200">
-    <div class="container mx-auto">
-        <div class="flex flex-col grow md:flex-row justify-between">
-            <div class="w-full">
-                <ul class="">
-                    <li class="">
-                        <a class="text-lg font-semibold text-gray-900" href="#">Home</a>
-                    </li>
-                </ul>
-            </div>
-                {{-- search box section hidden sm:hidden lg:block lg:--}}
-            <div class="relative">
-                <input class="lg:w-60 bg-gray-200 rounded-full px-8 py-1 mx-5 focus:outline-none focus:shadow-outline" type="text" placeholder="Search">
-                    <div class="absolute bottom-2 left-7">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- End of wrapper breadcumbs container --}}
-    </div>
-{{-- End of breadcrumbs --}}
-    {{-- <div class="grid place-items-center h-64 bg-gray-200">
-        <h4 class="text-2xl text-gray-900 font-bold">Banner</h4>
-    </div> --}}
     {{-- Product banner --}}
     <div class="container mx-auto px-4 py-10">
         <div class="flex flex-col sm:flex-col md:flex-col lg:flex-row">
@@ -67,19 +40,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-    {{-- <div class="grid place-items-center h-64 bg-gray-200">
-        <h4 class="text-2xl text-gray-900 font-bold">About Page Under Construction</h4>
-    </div> --}}
 </div>
 @endsection

@@ -19,17 +19,22 @@
                 {{-- application section --}}
                 <div class="description-section container mx-auto">
                     {{-- Certificate section --}}
-                    <div class="container mx-auto">
+                    <div class="container mx-auto"> 
                         <h2 class="text-3xl font-semibold text-gray-900 text-center py-6">Award Certificate</h2>
                         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                            @foreach ($certificates as $certificate)    
-                                <div class="">
-                                    <div class="flex justify-center">
-                                        <img src="{{ asset('storage/'. $certificate->image ) }}" alt="">
-                                    </div>
+                            @forelse ($certificates as $certificate)
+                            <div class="">
+                                <div class="flex justify-center">
+                                    <img src="{{ asset('storage/'. $certificate->image ) }}" alt="">
                                 </div>
-                            @endforeach
+                            </div>
+                            @empty
+                            <div class="grid grid-cols-1">
+                                <h2 class="text-xl font-semibold text-gray-900 py-6">Awarding certificates not found</h2>
+                            </div>
+                            @endforelse
                         </div>
+                        {{--  End of certificate award section  --}}
                     </div>
                 {{-- End of the table div --}}
                 </div>
@@ -39,8 +44,11 @@
                 {{-- @include('partials.product-nav') --}}
                 <ul class="px-2">
                     @foreach ($categories as $category)
-                        <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
+                    <li class="pb-5"><a class="font-semibold text-lg" href="{{ route('products.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
                     @endforeach
+                    {{--  @foreach ($categories as $category)
+                        <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
+                    @endforeach  --}}
                 </ul>
             </div>
         </div>

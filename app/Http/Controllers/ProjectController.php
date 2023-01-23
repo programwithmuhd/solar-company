@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Project;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class LandingPageController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +16,22 @@ class LandingPageController extends Controller
     public function index()
     {
         $categories = Category::inRandomOrder()->take(5)->get();
-        
+
         $projects = Project::all();
 
-        $products = Product::inRandomOrder()->take(8)->get();
-        return view('landing-page')->with([
-            'products' => $products,
+        return view('solar-projects')->with([
             'projects' => $projects,
             'categories' => $categories
         ]);
+    }
+
+    
+    public function show($id)
+    {
+        $categories = Category::inRandomOrder()->take(5)->get();
+
+        $project = Project::findOrFail($id);
+
+        return view('solar-project', compact(['categories', 'project']));
     }
 }

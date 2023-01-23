@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="w-full mx-auto">
-    <div class="grid place-items-center h-64 bg-gray-200">
-        <h4 class="text-2xl text-gray-900 font-bold">Page Under Construction</h4>
+    <div class="object-fit object-contain h-44 md:h-full">
+        <img class="w-full h-full" src="/img/slideshows/10.png" alt="">
     </div>
     <div class="container mx-auto px-4 py-6">
         <h2 class="text-3xl font-semibold text-gray-900 text-center py-4">Contact Us</h2>
