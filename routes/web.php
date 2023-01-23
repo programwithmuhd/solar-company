@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ProductFaqsController;
+use App\Http\Controllers\ProductVideoController;
 use App\Http\Controllers\ProductParameterController;
 use App\Http\Controllers\ProductApplicationController;
 
@@ -19,22 +24,7 @@ use App\Http\Controllers\ProductApplicationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-    //     return view('welcome');
-    // });
-    
-// Route::view('/', 'index');
-// Route::view('/products', 'products');
-// Route::view('/product', 'product');
-Route::view('/about', 'about');
-Route::view('/services', 'services');
-Route::view('/contact', 'contact');
-// Route::view('/product-parameter', 'product-parameter');
-// Route::view('/product-application', 'product-application');
-Route::view('/product-video', 'product-video');
-// Route::view('/certificates', 'certificates');
-// Route::view('/search', 'search');
+Route::get('/about', [AboutPageController::class, 'index'])->name('about-page.index');
 Route::get('/', [LandingPageController::class, 'index'])->name('landing-page.index');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/search', [ProductController::class, 'search'])->name('search');
@@ -44,7 +34,11 @@ Route::get('/product-parameter/{id}', [ProductParameterController::class, 'show'
 Route::get('/product-application/{product}', [ProductApplicationController::class, 'show'])->name('product-application.show');
 // Route::get('/certificates', [CertificateController::class, 'index'])->name('certificates.show');
 Route::get('/certificates/{id}', [CertificateController::class, 'show'])->name('certificate.show');
-// Route::get('/product', [ProductsController::class, 'index'])->name('categories.index');
+Route::get('/product-video/{id}', [ProductVideoController::class, 'show'])->name('video.show');
+Route::get('/product-faqs/{id}', [ProductFaqsController::class, 'show'])->name('faqs.show');
+Route::get('/solar-projects', [ProjectController::class, 'index'])->name('project.index');
+Route::get('/solar-project/{id}', [ProjectController::class, 'show'])->name('project.show');
+Route::get('/contact', [ContactPageController::class, 'index'])->name('contact-page.index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

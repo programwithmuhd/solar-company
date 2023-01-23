@@ -25,28 +25,26 @@
                         <th colspan="5" class="p-4 text-xl font-semibold tracking-wide">{{ $configParamName->name }}</th>
                     </tr> --}}
                     <tr class="">
-                        <th class="w-25 p-3 text-xl font-semibold tracking-wide text-center">Application</th>
+                        <th class="w-25 p-3 text-xl font-semibold tracking-wide text-center">Applications</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-400">
+                    @forelse ($applications as $application)
                     <tr class="even:bg-white odd:bg-gray-200">
-                        <td class="p-3 text-center text-xl text-gray-700 whitespace-nowrap">Farm Solar</td>
+                        <td class="p-3 text-center text-xl text-gray-700 whitespace-nowrap">{{ $application->name }}</td>
                     </tr>
-                    <tr class="even:bg-white odd:bg-gray-200">
-                        <td class="p-3 text-center text-xl text-gray-700 whitespace-nowrap">Car Charging Solar</td>
-                    </tr>
-                    <tr class="even:bg-white odd:bg-gray-200">
-                        <td class="p-3 text-center text-xl text-gray-700 whitespace-nowrap">House Solar</td>
-                    </tr>
-                    {{-- @empty
-                        <td colspan="4" class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                            <h2 class="text-lg text-gray-900 text-center">No product parameter found</h2>
+                    @empty
+                        <td colspan="1" class="p-3 text-sm text-gray-700 whitespace-nowrap">
+                            <h2 class="text-lg text-gray-900 text-center">No application found</h2>
                         </td>
-                    @endforelse --}}
+                    @endforelse
                 </tbody>
             </table>
                 </div>
                 {{-- End of the table div --}}
+                </div>
+                <div class="container mx-auto py-12 px-12">
+                    {{ $applications->links() }}
                 </div>
                 {{-- End of Application section section --}}
             </div>
@@ -54,8 +52,11 @@
                 {{-- @include('partials.product-nav') --}}
                 <ul class="px-2">
                     @foreach ($categories as $category)
-                        <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
+                    <li class="pb-5"><a class="font-semibold text-lg" href="{{ route('products.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
                     @endforeach
+                    {{--  @foreach ($categories as $category)
+                        <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
+                    @endforeach  --}}
                 </ul>
             </div>
         </div>

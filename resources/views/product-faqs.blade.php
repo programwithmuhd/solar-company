@@ -16,21 +16,24 @@
                 </div>
                 {{-- Nav list goes under this two section --}}
                 @include('partials.navs-list-detail')
-                {{-- Youtube video section --}}
-                <div class="container mx-auto">
-                        @if ($productVideo)
-                        <div class="grid place-items-center aspect-w-9 aspect-h-5">
-                            {!! $productVideo->iframe !!}
-                        </div>
-                        @else
-                        <div class="grid place-items-center">
-                            <p class="text-lg font-semibold">No Product Video Found</p>
-                        </div>
-                        @endif
+                {{-- Faqs description section --}}
+                <div class="faqs-section container mx-auto">
+                    @forelse ($faqs as $faq)
+                    <div class="mx-10 py-4">
+                        <h4 class="text-lg font-semibold text-gray-900">{!! $faq->question !!}</h4>
+                        <p class="">{!! $faq->answer !!}</p>
+                    </div>
+                    @empty
+                    <h4 class="text-center text-lg font-semibold text-gray-900">Frequently asked questions not found!</h4>
+                    @endforelse
 
-                        {{--  <iframe class="" src="https://www.youtube.com/embed/jxt3v7kTlvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  --}}
+                    {{--  <div class="mx-10 py-4">
+                        <h4 class="text-lg font-semibold text-gray-900">Q1: How about the delivery time?</h4>
+                        <p class="">A1: 7 days for sample, 15 days for order</p>
+                    </div>  --}}
+                {{-- End of the faqs div --}}
                 </div>
-                {{-- End of Video section --}}
+                {{-- End of Faqs section --}}
             </div>
             <div class="basis-1/5 py-12">
                 <ul class="px-2">

@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             ConfigurationsTableSeeder::class,
             ConfigParamsTableSeeder::class,
             ProductParameterTableSeeder::class,
+            ApplicationTableSeeder::class,
         ]);
     }
 }

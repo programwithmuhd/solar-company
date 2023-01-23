@@ -11,6 +11,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "nicolaslopezj/searchable": "^1.13",
         "tcg/voyager": "^1.6"
     },
     "require-dev": {

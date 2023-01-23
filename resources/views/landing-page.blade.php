@@ -3,18 +3,45 @@
 @section('content')
     <div class="">
         <div class="main-carousel">
-        <div class="carousel-cell">
-            <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/slideshows/1.jpg" alt="" height="">
-        </div>
-        <div class="carousel-cell">
-            <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/slideshows/2.jpg" alt="" height="">
-        </div>
-        <div class="carousel-cell">
-            <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/slideshows/3.jpg" alt="" height="">
-        </div>            
-    </div>  
+            <div class="carousel-cell">
+                <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/sliders/1.png" alt="" height="">
+            </div>
+            <div class="carousel-cell">
+                <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/sliders/2.png" alt="" height="">
+            </div>
+            <div class="carousel-cell">
+                <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/sliders/3.png" alt="" height="">
+            </div>            
+        </div>  
     </div>
-    {{-- End of Carousel Slider --}}
+    {{--  End of Carousel Slider  --}}
+    {{--  glide sliders  --}}
+
+    {{--  <div class="glide">
+{{--  
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">
+                    <img class="w-full" src="/img/sliders/1.png" alt="" height="">
+                </li>
+                <li class="glide__slide">
+                    <img class="w-full" src="/img/sliders/2.png" alt="" height="">
+                </li>
+                <li class="glide__slide">
+                    <img class="w-full" src="/img/sliders/3.png" alt="" height="">
+                </li>
+              </ul>
+        </div>
+      
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+      </div>  --}}
+
+      {{--  End of glide  --}}
+
     {{-- <div class="grid place-items-center h-64 bg-gray-200">
         <h4 class="text-2xl text-gray-900 font-bold">Slider</h4>
     </div> --}}
@@ -23,122 +50,39 @@
         <p class="text-lg text-gray-900 px-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque impedit assumenda facere distinctio illo hic deserunt, praesentium autem illum iusto blanditiis corrupti dolore unde totam magni nisi, doloremque corporis voluptatibus architecto! Corrupti, assumenda omnis repellat tempora nihil commodi ut similique, cumque dolore unde atque eos aut? Eos assumenda aspernatur atque velit vel beatae impedit omnis obcaecati, eius sequi porro tempore ratione animi quas veniam perspiciatis sint recusandae eaque unde iusto dignissimos cumque. Facere vero aliquid provident blanditiis at. Quo facilis iure, cum deserunt, consequuntur quisquam quos nam hic ratione vel ipsa esse sapiente eveniet animi cumque dolorum voluptate culpa recusandae at minus, dignissimos doloremque aliquam! Nesciunt assumenda optio cumque quisquam debitis vitae maxime voluptatum, fugiat quis. Eveniet porro quia, officiis veniam sint consectetur aliquid cupiditate iste ipsam cumque. Neque expedita pariatur tempore, quaerat eligendi molestias assumenda velit, vero iure, dignissimos hic? Obcaecati culpa laboriosam nihil labore praesentium vitae illum eaque.</p>
     </div>
     {{-- End about us section --}}
-    <div class="container mx-auto px-5 py-6">
-        <h2 class="text-3xl font-semibold text-gray-900 text-center">Our Services</h2>
-        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 ">
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+    <div class="container mx-auto">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-6">
+            @forelse ($projects as $project)
+            <div class="text-center">
+                <div class="object-cover object-center overflow-hidden">
+                    <img src="{{ asset('storage/'. $project->image ) }}" alt="">
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-center font-semibold text-lg truncate">{{ $project->name }}</h4>
+                </div>
+                <div class="flex justify-center py-4">
+                    <svg class="pr-1 w-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
+                      
+                    <p>{{ $project->date }}</p>
                 </div>
                 <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
+                    <div>
+                        <p class="text-center mt-1">{!! Str::limit($project->description, 135) !!}</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
+                <div class="text-center mt-2 mb-8">
+                    <a class="inline-block mt-2 mb-2 px-4 py-2 bg-primary shadow-lg rounded-lg outline-none text-white uppercase" href="{{ route('project.show', $project->id ) }}">Read More</a>
                 </div>
             </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            <div class="">
-                <div class="flex justify-center">
-                    <svg class="w-40 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                    </svg>
-                </div>
-                <div>
-                    <h4 class="text-center font-semibold text-lg truncate">Feedback</h4>
-                </div>
-                <div>
-                    <p class="text-center mt-1 truncate">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde architecto aut, obcaecati laboriosam labore optio rerum provident nam eos aliquid illum deserunt quidem adipisci libero ea voluptatem eius enim ipsam perspiciatis repudiandae temporibus, natus exercitationem nihil cumque? Saepe, autem odio?</p>
-                </div>
-            </div>
-            </div>
+            @empty
+                <p class="text-lg font-semibold text-center">No project found</p>
+            @endforelse
+        </div>
+        {{--  End of project section  --}}
+    </div>
+    {{--  End of container section  --}}
         {{-- End of sub service item --}}
     </div>
     {{-- <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'></div> --}}
