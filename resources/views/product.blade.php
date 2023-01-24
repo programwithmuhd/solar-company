@@ -8,7 +8,7 @@
             <div class="basis-4/5">
                 <div class="flex flex-col md:flex md:flex-row lg:flex-row bg-secondary-body">
                     <div class="basis-2/4 object-cover object-center overflow-hidden">
-                        <img class="" src="/img/{{ $product->id }}.jpg" alt="" width="400" height="250">
+                        <img class="" src="{{ asset('storage/'. $product->image ) }}" alt="" width="400" height="250">
                     </div>
                     <div class="basis-2/4 p-4 lg:overflow-y-scroll">
                         <h4 class="text-2xl py-4 font-bold text-gray-900 text-center">{{ $product->name }}</h4>
