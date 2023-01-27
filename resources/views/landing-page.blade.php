@@ -1,50 +1,19 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="">
-        <div class="main-carousel">
-            <div class="carousel-cell">
-                <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/sliders/1.png" alt="" height="">
-            </div>
-            <div class="carousel-cell">
-                <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/sliders/2.png" alt="" height="">
-            </div>
-            <div class="carousel-cell">
-                <img class="w-full h-full sm:w-full h-full md:w-full h-full lg:w-full h-full object-contain" src="/img/sliders/3.png" alt="" height="">
-            </div>            
-        </div>  
+    <div class="w-full object-fit object-contain">
+        <ul class="slider" id="slider">
+            <li>
+              <img class="" src="{{ asset('img/sliders/1.png') }}" alt="slide1"/>
+            </li>
+            <li>
+              <img class="" src="{{ asset('img/sliders/2.png') }}" alt="slide2"/>
+            </li>
+            <li>
+              <img class="" src="{{ asset('img/sliders/3.png') }}" alt="slide3"/>
+            </li>
+        </ul>
     </div>
-    {{--  End of Carousel Slider  --}}
-    {{--  glide sliders  --}}
-
-    {{--  <div class="glide">
-{{--  
-      <div class="glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide">
-                    <img class="w-full" src="/img/sliders/1.png" alt="" height="">
-                </li>
-                <li class="glide__slide">
-                    <img class="w-full" src="/img/sliders/2.png" alt="" height="">
-                </li>
-                <li class="glide__slide">
-                    <img class="w-full" src="/img/sliders/3.png" alt="" height="">
-                </li>
-              </ul>
-        </div>
-      
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-        </div>
-      </div>  --}}
-
-      {{--  End of glide  --}}
-
-    {{-- <div class="grid place-items-center h-64 bg-gray-200">
-        <h4 class="text-2xl text-gray-900 font-bold">Slider</h4>
-    </div> --}}
     <div class="container mx-auto px-4 border-t border-t-red-500 bg-secondary-body">
         <h2 class="text-3xl font-semibold text-gray-900 text-center py-4">Welcome To Xeezacks Smart Solar Technologies</h2>
         <p class="text-lg text-gray-900 px-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque impedit assumenda facere distinctio illo hic deserunt, praesentium autem illum iusto blanditiis corrupti dolore unde totam magni nisi, doloremque corporis voluptatibus architecto! Corrupti, assumenda omnis repellat tempora nihil commodi ut similique, cumque dolore unde atque eos aut? Eos assumenda aspernatur atque velit vel beatae impedit omnis obcaecati, eius sequi porro tempore ratione animi quas veniam perspiciatis sint recusandae eaque unde iusto dignissimos cumque. Facere vero aliquid provident blanditiis at. Quo facilis iure, cum deserunt, consequuntur quisquam quos nam hic ratione vel ipsa esse sapiente eveniet animi cumque dolorum voluptate culpa recusandae at minus, dignissimos doloremque aliquam! Nesciunt assumenda optio cumque quisquam debitis vitae maxime voluptatum, fugiat quis. Eveniet porro quia, officiis veniam sint consectetur aliquid cupiditate iste ipsam cumque. Neque expedita pariatur tempore, quaerat eligendi molestias assumenda velit, vero iure, dignissimos hic? Obcaecati culpa laboriosam nihil labore praesentium vitae illum eaque.</p>
@@ -52,7 +21,7 @@
     {{-- End about us section --}}
     <div class="container mx-auto px-4 py-6">
         <h2 class="text-3xl font-semibold text-gray-900 text-center py-6">Our Projects</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-6">
             @forelse ($projects as $project)
             <div class="text-center">
                 <div class="object-cover object-center overflow-hidden">
@@ -210,7 +179,7 @@
         <div class="more-information container mx-auto text-center my-6">
             <h2 class="text-3xl font-semibold text-gray-900 py-4">Do you have any Projects?</h2>
             <p class="text-lg text-gray-900">Whether you want to work with us or are interested in knowing more about what we do, we will love to hear from you</p>
-            <a class="inline-block mt-10 mb-2 px-4 py-2 bg-primary shadow-lg rounded-lg outline-none text-white uppercase" href="/contact">Contact now</a>
+            <a class="inline-block mt-10 mb-2 px-4 py-2 bg-primary shadow-lg rounded-lg outline-none text-white uppercase" href="{{ route('contact-page.index') }}">Contact now</a>
         </div>
         {{-- End of more-info section --}}
     </div>

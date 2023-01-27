@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProductFaqsController;
 use App\Http\Controllers\ProductVideoController;
+use App\Http\Controllers\ThankyouPageController;
 use App\Http\Controllers\ProductParameterController;
 use App\Http\Controllers\ProductApplicationController;
 
@@ -38,7 +39,9 @@ Route::get('/product-video/{id}', [ProductVideoController::class, 'show'])->name
 Route::get('/product-faqs/{id}', [ProductFaqsController::class, 'show'])->name('faqs.show');
 Route::get('/solar-projects', [ProjectController::class, 'index'])->name('project.index');
 Route::get('/solar-project/{id}', [ProjectController::class, 'show'])->name('project.show');
-Route::get('/contact', [ContactPageController::class, 'index'])->name('contact-page.index');
+Route::get('/contact/create', [ContactPageController::class, 'index'])->name('contact-page.index');
+Route::post('/contact/store', [ContactPageController::class, 'store'])->name('contact-page.store');
+Route::get('/thankyou', [ThankyouPageController::class, 'index'])->name('thankyou.index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

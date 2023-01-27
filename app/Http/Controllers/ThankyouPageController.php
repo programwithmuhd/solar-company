@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class ContactPageController extends Controller
+class ThankyouPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,11 @@ class ContactPageController extends Controller
     {
         $categories = Category::inRandomOrder()->take(5)->get();
 
-        return view('contact', compact('categories'));
+        if(! session()->has('success_message')) {
+            return redirect('/');
+        }
+
+        return view('thankyou', compact('categories'));
     }
 
     /**
@@ -37,14 +41,7 @@ class ContactPageController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'contact' => 'required',
-            'message' => 'required',
-        ]);
-
-        return redirect()->route('landing-page.index')->with('success_message', 'Thank you');
+        //
     }
 
     /**

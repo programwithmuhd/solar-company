@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="{{ asset('/css/flickity.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('/css/glide.core.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/glide.theme.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/slider.min.css') }}">
+    <link rel="stylesheet" href="/fonts'"> <!-- Scripts -->
     @vite('resources/css/app.css')
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/slider.min.js') }}"></script>
+    <script src="{{ asset('js/slider.js') }}"></script>
 </head>
 <body class="font-sans bg-secondary-body overflow-x-hidden">
         <nav class="bg-primary flex flex-col flex-auto items-center lg:flex-row justify-between px-10 py-2">
@@ -21,24 +27,24 @@
             <div class="menu-navs order-2 sm:order-2 md:order-2 lg:order-1">
                 <ul class="hidden sm:hidden md:flex flex flex-col sm:flex-col md:flex-row lg:flex-row items-center transition ease-in-out delay-150">
                     <li class="px-8 py-4">
-                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="/about">About</a>
+                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="{{ route('about-page.index') }}">About</a>
                     </li>
                     <li class="px-8 py-4">
-                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="/">Home</a>
+                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="{{ route('landing-page.index') }}">Home</a>
                     </li>
                     <li class="px-8 py-4">
-                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="/products">Products</a>
+                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="{{ route('products.index') }}">Products</a>
                     </li>
                     <li class="px-8 py-4">
-                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="/solar-projects">Projects</a>
+                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="{{ route('project.index') }}">Projects</a>
                     </li>
                     <li class="px-8 py-4">
-                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="/contact">Contact</a>
+                        <a class="text-lg font-semibold text-gray-300 hover:text-gray-200" href="{{ route('contact-page.index') }}">Contact</a>
                     </li>
                 </ul>
             </div>
             {{-- End of nav divs div --}}
-            <div class="search order-1 sm:order-1 md:order-1 lg:order-2 mt-6 outline-none">
+            <div class="search order-1 sm:order-1 md:order-1 lg:order-2 mt-1 outline-none">
                 <div class="sm:inline lg:block lg:relative">
                     <form action="{{ route('search') }}" method="get">
                         <input class="w-auto sm:w-auto md:w-auto lg:w-auto bg-gray-200 rounded-full px-8 py-1 mx-5 focus:outline-none focus:shadow-outline" type="text" name="query" placeholder="Search"
@@ -176,21 +182,7 @@
             <p class="text-xl text-center text-secondary-slogan">&copy;2023 All Rights Reserved</p>
         </div>
         {{-- End of footer div --}}
-        <script src="{{ asset('js/flickity.js') }}"></script>
-        <script src="{{ asset('/glide.min.js') }}"></script>
         <script>
-            
-
-            var elem = document.querySelector('.main-carousel');
-                var flkty = new Flickity( elem, {
-                // options
-                cellAlign: 'left',
-                contain: true,
-                wrapAround: true,
-                freeScroll: false,
-                wrapAround: true,
-                autoPlay: true
-            });
 
             let menu = document.querySelector('.mobile-menu');
             let navs = document.querySelector('.menu-navs ul');

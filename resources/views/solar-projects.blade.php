@@ -6,7 +6,7 @@
         <img class="w-full h-full" src="/img/slideshows/10.png" alt="">
     </div>
     <div class="container mx-auto">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-4 py-6">
             @forelse ($projects as $project)
             <div class="text-center">
                 <div class="object-cover object-center overflow-hidden">

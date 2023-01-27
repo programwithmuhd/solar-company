@@ -31,11 +31,11 @@
             </div>
             <div class="basis-1/5 px-8 py-12 border  border-solid">
                 <h1 class="px-2 py-8 text-xl font-bold">Categories</h1>
-    <ul class="px-2">
-        @foreach ($categories as $category)
-            <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
-        @endforeach
-    </ul>
+                <ul class="px-2">
+                    @foreach ($categories as $category)
+                        <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
+                    @endforeach
+                </ul>
                 {{-- @include('partials.product-nav') --}}
             </div>
         </div>
