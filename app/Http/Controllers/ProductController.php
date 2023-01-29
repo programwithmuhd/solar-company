@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use view;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -27,7 +28,7 @@ class ProductController extends Controller
             $categories = Category::all();
             $categoryName = 'All Products';
         }
-        
+
         return view('products')->with([
             'categories' => $categories,
             'products' => $products,
@@ -65,7 +66,10 @@ class ProductController extends Controller
 
         $query = $request->input('query');
 
-        $products = Product::where('name', 'like', "%$query%")->paginate(8);
+        $products = Product::where('name', 'like', "%$query%")
+                            ->orWhere('details', 'like', "%$query%")
+                            ->orWhere('description', 'like', "%$query%")
+                            ->paginate(8);
 
         return view('search-results', compact(['products', 'categories']));
     }

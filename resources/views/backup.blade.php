@@ -2,18 +2,17 @@
 
 @section('content')
     <div class="w-full object-fit object-contain">
-        {{-- flickity --}}
-        <div class="main-carousel">
-            <div class="carousel-cell object-fit object-contain">
-            <img class="" src="{{ asset('img/sliders/1.png') }}" alt="slide1"/>
-            </div>
-            <div class="carousel-cell object-fit object-contain">
-            <img class="" src="{{ asset('img/sliders/2.png') }}" alt="slide1"/>
-            </div>
-            <div class="carousel-cell object-fit object-contain">
-            <img class="" src="{{ asset('img/sliders/3.png') }}" alt="slide1"/>
-            </div>
-        </div>
+        <ul class="slider" id="slider">
+            <li>
+              <img class="" src="{{ asset('img/sliders/1.png') }}" alt="slide1"/>
+            </li>
+            <li>
+              <img class="" src="{{ asset('img/sliders/2.png') }}" alt="slide2"/>
+            </li>
+            <li>
+              <img class="" src="{{ asset('img/sliders/3.png') }}" alt="slide3"/>
+            </li>
+        </ul>
     </div>
     <div class="container mx-auto px-4 border-t border-t-red-500 bg-secondary-body">
         <h2 class="text-3xl font-semibold text-gray-900 text-center py-4">Welcome To Xeezacks Smart Solar Technologies</h2>

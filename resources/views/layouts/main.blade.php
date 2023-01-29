@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/fonts'"> <!-- Scripts -->
     @vite('resources/css/app.css')
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/flickity.js') }}"></script>
     <script src="{{ asset('js/slider.min.js') }}"></script>
     <script src="{{ asset('js/slider.js') }}"></script>
 </head>
@@ -183,6 +184,13 @@
         </div>
         {{-- End of footer div --}}
         <script>
+            $('.main-carousel').flickity({
+            // options
+                cellAlign: 'left',
+                contain: true,
+                wrapAround: true,
+                autoPlay: true,
+            });
 
             let menu = document.querySelector('.mobile-menu');
             let navs = document.querySelector('.menu-navs ul');

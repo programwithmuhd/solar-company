@@ -146,3 +146,39 @@ https://flickity.metafizzy.co
 .flickity-page-dots .dot.is-selected {
     opacity: 1;
 }
+
+/* additional styles */
+.carousel-cell {
+    width: 100%; /* full width */
+    min-height: 500px;
+    background: #222;
+    /* center images in cells with flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel.is-fullscreen .carousel-cell {
+    height: 100%;
+  }
+
+  .carousel-cell img {
+    width: 100%;
+    object-fit: cover;
+    object-fit: fill;
+    object-fit: contain;
+    display: block;
+    max-height: 100%;
+  }
+
+  @media screen and (max-width:768px) {
+    .carousel-cell {
+        width: 100%; /* full width */
+        min-height: 200px;
+        background: #222;
+        /* center images in cells with flexbox */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  }

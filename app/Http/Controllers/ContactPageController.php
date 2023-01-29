@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormMail;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactPageController extends Controller
 {
@@ -44,7 +46,9 @@ class ContactPageController extends Controller
             'message' => 'required',
         ]);
 
-        return redirect()->route('landing-page.index')->with('success_message', 'Thank you');
+        Mail::to('talktomuhd@gmail.com')->send(new ContactFormMail($data));
+
+        return redirect()->route('thankyou.index')->with('success_message', 'Thank you');
     }
 
     /**

@@ -11,7 +11,7 @@
                 @foreach ($categories as $category)
                 <li class="pb-5"><a class="font-semibold text-lg" href="{{ route('products.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
                 @endforeach
-            </ul> 
+            </ul>
         </div>
         <div class="basis-4/5 px-4">
             <h1 class="text-2xl font-bold text-gray-900 py-4">{{ $categoryName }}</h1>
@@ -29,8 +29,8 @@
                     </div>
                     <div class="text-center mt-2 mb-8">
                         <a class="inline-block mt-2 mb-2 px-4 py-2 bg-primary shadow-lg rounded-lg outline-none text-white uppercase" href="{{ route('product.show', ['product' => $product->id] ) }}">View Detail</a>
-                    </div>        
-                </div>   
+                    </div>
+                </div>
                 @empty
                     <h4 class="text-center font-semibold text-lg">No products</h4>
                 @endforelse
