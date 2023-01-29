@@ -56,9 +56,6 @@
                     @foreach ($categories as $category)
                     <li class="pb-5"><a class="font-semibold text-lg" href="{{ route('products.index', ['category' => $category->slug]) }}">{{ $category->name }}</a></li>
                     @endforeach
-                    {{--  @foreach ($categories as $category)
-                        <li class="pb-5"><a class="font-semibold text-lg" href="#">{{ $category->name }}</a></li>
-                    @endforeach  --}}
                 </ul>
                 {{-- @include('partials.product-nav') --}}
             </div>
