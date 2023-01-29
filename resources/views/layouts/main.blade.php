@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name=”description” content=”xeezackssolar.com has all the solar products and smart solar tech resources you need. Find products such as, flood lights, solar panel, street lights, camping lights, solar batteries, solar systems, solar bulbs, water pump solars e.t.c!”>
+    <meta name=”description” content=”xeezackssolar.com has all the solar products and smart solar tech resources you need. Find solar products such as, flood lights, solar panel, street lights, camping lights, solar batteries, solar systems, solar bulbs, water pump solars e.t.c.”>
     <title>Xeezacks Solar</title>
     <link rel="stylesheet" href="{{ asset('/css/flickity.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('/css/glide.core.min.css') }}">
