@@ -73,7 +73,7 @@
                     <p class="text-center mt-1 truncate">{{ $product->description }}</p>
                 </div>
                 <div class="text-center mt-2 mb-8">
-                    <a class="inline-block mt-2 mb-2 px-4 py-2 bg-primary shadow-lg rounded-lg outline-none text-white uppercase" href="#">View Detail</a>
+                    <a class="inline-block mt-2 mb-2 px-4 py-2 bg-primary shadow-lg rounded-lg outline-none text-white uppercase" href="{{ route('product.show', ['product' => $product->id] ) }}">View Detail</a>
                 </div>
             </div>
             @endforeach
