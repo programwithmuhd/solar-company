@@ -24,7 +24,7 @@ class ProductController extends Controller
             $categoryName = $categories->where('slug', request()->category)->first()->name;
 
         } else {
-            $products = Product::first()->paginate(8);
+            $products = Product::latest()->paginate(8);
             $categories = Category::all();
             $categoryName = 'All Products';
         }
