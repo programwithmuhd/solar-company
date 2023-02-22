@@ -11,6 +11,9 @@
             <h2 class="text-lg font-semibold text-gray-700 py-2 text-center">Our Office Address:</h2>
             <p class="text-cent text-lg font-semibold text-gray-700">#6 Ground Floor Challenge Plaza, Ali Akilu Road, Kaduna Nigeria</p>
             <p class="text-center text-lg font-semibold text-gray-900">Abuja Office:Plot 561, Sani Zangon Daura Estate Kado, Abuja Nigeria</p>
+            <h2 class="text-lg font-semibold text-gray-700 py-2">website & email address:</h2>
+            <p class="text-center text-lg font-semibold text-gray-900">www.xeezackssolar.com</p>
+            <p class="text-center text-lg font-semibold text-gray-900">customers@xeezackssolar.com</p>
             <h2 class="text-lg font-semibold text-gray-700 py-2">Contact numbers:</h2>
             <p class="text-center text-lg font-semibold text-gray-900">+234(0)14539141, +2347038989839, +2348026909707, +2348077250300, +2348099331115</p>
             {{-- End of contact --}}
@@ -76,7 +79,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit Question</button>
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit Enquiry</button>
                             </div>
                         </form>
                     </div>
